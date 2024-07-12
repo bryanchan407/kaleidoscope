@@ -5,7 +5,7 @@ import 'package:pdfx/pdfx.dart';
 
 class FlutterFlowPdfViewer extends StatefulWidget {
   const FlutterFlowPdfViewer({
-    Key? key,
+    super.key,
     this.networkPath,
     this.assetPath,
     this.fileBytes,
@@ -13,8 +13,7 @@ class FlutterFlowPdfViewer extends StatefulWidget {
     this.height,
     this.horizontalScroll = false,
   })  : assert(
-            (networkPath != null) ^ (assetPath != null) ^ (fileBytes != null)),
-        super(key: key);
+            (networkPath != null) ^ (assetPath != null) ^ (fileBytes != null));
 
   final String? networkPath;
   final String? assetPath;
@@ -62,7 +61,7 @@ class _FlutterFlowPdfViewerState extends State<FlutterFlowPdfViewer> {
   }
 
   @override
-  Widget build(BuildContext context) => Container(
+  Widget build(BuildContext context) => SizedBox(
         width: widget.width,
         height: widget.height,
         child: controller != null

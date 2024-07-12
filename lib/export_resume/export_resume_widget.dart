@@ -61,8 +61,8 @@ class _ExportResumeWidgetState extends State<ExportResumeWidget> {
                     shape: BoxShape.rectangle,
                   ),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        10.0, 0.0, 10.0, 0.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -127,14 +127,13 @@ class _ExportResumeWidgetState extends State<ExportResumeWidget> {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            12.0, 0.0, 0.0, 0.0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 30.0,
@@ -158,8 +157,8 @@ class _ExportResumeWidgetState extends State<ExportResumeWidget> {
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 24.0, 0.0, 24.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
                       child: FlutterFlowPdfViewer(
                         fileBytes: _model.resumeBuilder?.bytes,
                         width: MediaQuery.sizeOf(context).width * 0.9,
@@ -168,32 +167,57 @@ class _ExportResumeWidgetState extends State<ExportResumeWidget> {
                       ),
                     ),
                   ),
+                if (_model.resumeBuilder == null ||
+                    (_model.resumeBuilder?.bytes?.isEmpty ?? true))
+                  Align(
+                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
+                      child: Text(
+                        'Want to generate a quick resume that will blow your competition away?',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Inter',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              fontSize: 30.0,
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ),
+                  ),
                 Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        0.0, 0.0, 0.0, 16.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         _model.resumeBuilder = await actions.exportResume(
                           (currentUserDocument?.classes.toList() ?? [])
                               .toList(),
                           (currentUserDocument?.clubs.toList() ?? []).toList(),
-                          (currentUserDocument?.communityService.toList() ?? [])
+                          (currentUserDocument?.communityService.toList() ??
+                                  [])
                               .toList(),
                           (currentUserDocument?.athletics.toList() ?? [])
                               .toList(),
-                          (currentUserDocument?.personalProjects.toList() ?? [])
+                          (currentUserDocument?.personalProjects.toList() ??
+                                  [])
                               .toList(),
-                          (currentUserDocument?.awards.toList() ?? []).toList(),
+                          (currentUserDocument?.awards.toList() ?? [])
+                              .toList(),
                           (currentUserDocument?.performingArts.toList() ?? [])
                               .toList(),
-                          '682-203-9834',
-                          'Bryan Chan',
-                          'chan407835@student.aisd.net',
+                          valueOrDefault<String>(
+                            currentPhoneNumber,
+                            '682-203-9834',
+                          ),
+                          currentUserDisplayName,
+                          currentUserEmail,
                           valueOrDefault(currentUserDocument?.description, ''),
-                          'Martin High School',
-                          'Computer Science/Business',
+                          valueOrDefault(currentUserDocument?.school, ''),
+                          valueOrDefault(currentUserDocument?.major, ''),
                           valueOrDefault(currentUserDocument?.city, ''),
                           valueOrDefault(currentUserDocument?.state, ''),
                         );
@@ -259,8 +283,8 @@ class _ExportResumeWidgetState extends State<ExportResumeWidget> {
                         height: 40.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
-                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(

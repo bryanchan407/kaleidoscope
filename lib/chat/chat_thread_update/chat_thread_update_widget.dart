@@ -61,8 +61,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                 borderRadius: BorderRadius.circular(0.0),
               ),
               child: Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
                 child: FutureBuilder<UsersRecord>(
                   future: _model.chatUser(
                     uniqueQueryKey: widget.chatMessagesRef?.reference.id,
@@ -139,8 +138,7 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                       ),
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         valueOrDefault<String>(
                                           otherUserUsersRecord.displayName,
@@ -253,8 +251,9 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                               null &&
                                           widget.chatMessagesRef?.image != '')
                                         Padding(
-                                          padding: const EdgeInsetsDirectional
-                                              .fromSTEB(0.0, 12.0, 0.0, 4.0),
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 12.0, 0.0, 4.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -282,12 +281,10 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 child: CachedNetworkImage(
-                                                  fadeInDuration:
-                                                      const Duration(
-                                                          milliseconds: 500),
-                                                  fadeOutDuration:
-                                                      const Duration(
-                                                          milliseconds: 500),
+                                                  fadeInDuration: const Duration(
+                                                      milliseconds: 500),
+                                                  fadeOutDuration: const Duration(
+                                                      milliseconds: 500),
                                                   imageUrl: path,
                                                   width: 300.0,
                                                   fit: BoxFit.cover,
@@ -332,15 +329,14 @@ class _ChatThreadUpdateWidgetState extends State<ChatThreadUpdateWidget> {
                 borderRadius: BorderRadius.circular(0.0),
               ),
               child: Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 4.0, 0.0, 8.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 8.0),
                       child: Text(
                         valueOrDefault<String>(
                           dateTimeFormat(

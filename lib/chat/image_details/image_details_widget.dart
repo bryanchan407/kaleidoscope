@@ -160,8 +160,7 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(
-                    12.0, 12.0, 12.0, 32.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 32.0),
                 child: FutureBuilder<UsersRecord>(
                   future: FFAppState().userDocQuery(
                     uniqueQueryKey: widget.chatMessage?.reference.id,
@@ -208,10 +207,8 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: CachedNetworkImage(
-                                  fadeInDuration:
-                                      const Duration(milliseconds: 200),
-                                  fadeOutDuration:
-                                      const Duration(milliseconds: 200),
+                                  fadeInDuration: const Duration(milliseconds: 200),
+                                  fadeOutDuration: const Duration(milliseconds: 200),
                                   imageUrl: otherUserUsersRecord.photoUrl,
                                   width: 44.0,
                                   height: 44.0,
@@ -246,9 +243,8 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                                           ),
                                     )),
                                     Padding(
-                                      padding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 4.0, 0.0, 0.0),
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 4.0, 0.0, 0.0),
                                       child: Text(
                                         dateTimeFormat('relative',
                                             widget.chatMessage!.timestamp!),

@@ -36,6 +36,9 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
         TextEditingController(text: currentUserDisplayName);
     _model.nameFocusNode ??= FocusNode();
 
+    _model.phoneNumberTextController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
+
     _model.schoolTextController ??= TextEditingController();
     _model.schoolFocusNode ??= FocusNode();
 
@@ -73,16 +76,14 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
           actions: const [],
           flexibleSpace: FlexibleSpaceBar(
             title: Padding(
-              padding:
-                  const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        0.0, 0.0, 0.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -126,8 +127,8 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 16.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: Stack(
                         children: [
                           InkWell(
@@ -247,8 +248,8 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => TextFormField(
                           controller: _model.nameTextController,
@@ -300,9 +301,8 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding:
-                                const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 24.0, 0.0, 24.0),
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 0.0, 24.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -316,8 +316,71 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                      child: TextFormField(
+                        controller: _model.phoneNumberTextController,
+                        focusNode: _model.phoneNumberFocusNode,
+                        textCapitalization: TextCapitalization.sentences,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          labelStyle:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                          hintText: 'Phone Number',
+                          hintStyle:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).secondary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).primary,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: FlutterFlowTheme.of(context).error,
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          filled: true,
+                          fillColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                              20.0, 24.0, 0.0, 24.0),
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Inter',
+                              letterSpacing: 0.0,
+                            ),
+                        textAlign: TextAlign.start,
+                        validator: _model.phoneNumberTextControllerValidator
+                            .asValidator(context),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: TextFormField(
                         controller: _model.schoolTextController,
                         focusNode: _model.schoolFocusNode,
@@ -379,8 +442,8 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: FlutterFlowDropDown<String>(
                         controller: _model.stateValueController ??=
                             FormFieldController<String>(null),
@@ -467,8 +530,8 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: TextFormField(
                         controller: _model.majorTextController,
                         focusNode: _model.majorFocusNode,
@@ -530,8 +593,8 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: TextFormField(
                         controller: _model.descriptionTextController,
                         focusNode: _model.descriptionFocusNode,
@@ -595,8 +658,8 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: TextFormField(
                         controller: _model.linkedinIDTextController,
                         focusNode: _model.linkedinIDFocusNode,
@@ -690,6 +753,8 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                                       getCurrentTimestamp.secondsSinceEpoch),
                                   description:
                                       _model.descriptionTextController.text,
+                                  phoneNumber:
+                                      _model.phoneNumberTextController.text,
                                 ),
                                 ...mapToFirestore(
                                   {
@@ -725,7 +790,9 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                                       _model.stateValue != '') &&
                                   (_model.majorTextController.text != '') &&
                                   (_model.descriptionTextController.text !=
-                                      '')) {
+                                          '') &&
+                                  (_model.phoneNumberTextController.text !=
+                                          '')) {
                                 context.pushNamed('Dashboard');
                               } else {
                                 await showDialog(
@@ -735,8 +802,7 @@ class _ProfileCreateWidgetState extends State<ProfileCreateWidget> {
                                       elevation: 0,
                                       insetPadding: EdgeInsets.zero,
                                       backgroundColor: Colors.transparent,
-                                      alignment: const AlignmentDirectional(
-                                              0.0, 0.0)
+                                      alignment: const AlignmentDirectional(0.0, 0.0)
                                           .resolve(Directionality.of(context)),
                                       child: SizedBox(
                                         height: 300.0,

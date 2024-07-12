@@ -112,11 +112,11 @@ class _DashboardWidgetState extends State<DashboardWidget>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        0.0,64.0, 0.0, 0.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        context.pushNamed('ExportResume');
+                        context.pushNamed('AIPage');
                       },
                       text: 'Export',
                       options: FFButtonOptions(
@@ -124,8 +124,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                         height: 40.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
-                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -145,8 +145,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                   Align(
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 16.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: Text(
                         '© 2023-2024 Kaleidoscope ',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -172,8 +172,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                       shape: BoxShape.rectangle,
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          10.0, 0.0, 10.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -255,199 +255,281 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional
-                                            .fromSTEB(16.0, 16.0, 16.0, 0.0),
-                                        child: Autocomplete<String>(
-                                          initialValue:
-                                              const TextEditingValue(),
-                                          optionsBuilder: (textEditingValue) {
-                                            if (textEditingValue.text == '') {
-                                              return const Iterable<
-                                                  String>.empty();
-                                            }
-                                            return dashboardUsersRecordList
-                                                .map((e) => e.displayName)
-                                                .toList()
-                                                .where((option) {
-                                              final lowercaseOption =
-                                                  option.toLowerCase();
-                                              return lowercaseOption.contains(
-                                                  textEditingValue.text
-                                                      .toLowerCase());
-                                            });
-                                          },
-                                          optionsViewBuilder:
-                                              (context, onSelected, options) {
-                                            return AutocompleteOptionsList(
-                                              textFieldKey:
-                                                  _model.searchTextFieldKey,
-                                              textController: _model
-                                                  .searchTextFieldTextController!,
-                                              options: options.toList(),
-                                              onSelected: onSelected,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              textHighlightStyle:
-                                                  const TextStyle(),
-                                              elevation: 4.0,
-                                              optionBackgroundColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              optionHighlightColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              maxHeight: 200.0,
-                                            );
-                                          },
-                                          onSelected: (String selection) {
-                                            setState(() => _model
-                                                    .searchTextFieldSelectedOption =
-                                                selection);
-                                            FocusScope.of(context).unfocus();
-                                          },
-                                          fieldViewBuilder: (
-                                            context,
-                                            textEditingController,
-                                            focusNode,
-                                            onEditingComplete,
-                                          ) {
-                                            _model.searchTextFieldFocusNode =
-                                                focusNode;
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 16.0, 16.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Expanded(
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 10.0, 0.0),
+                                                child: Autocomplete<String>(
+                                                  initialValue:
+                                                      const TextEditingValue(),
+                                                  optionsBuilder:
+                                                      (textEditingValue) {
+                                                    if (textEditingValue.text ==
+                                                        '') {
+                                                      return const Iterable<
+                                                          String>.empty();
+                                                    }
+                                                    return dashboardUsersRecordList
+                                                        .map((e) =>
+                                                            e.displayName)
+                                                        .toList()
+                                                        .where((option) {
+                                                      final lowercaseOption =
+                                                          option.toLowerCase();
+                                                      return lowercaseOption
+                                                          .contains(
+                                                              textEditingValue
+                                                                  .text
+                                                                  .toLowerCase());
+                                                    });
+                                                  },
+                                                  optionsViewBuilder: (context,
+                                                      onSelected, options) {
+                                                    return AutocompleteOptionsList(
+                                                      textFieldKey: _model
+                                                          .searchTextFieldKey,
+                                                      textController: _model
+                                                          .searchTextFieldTextController!,
+                                                      options: options.toList(),
+                                                      onSelected: onSelected,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      textHighlightStyle:
+                                                          const TextStyle(),
+                                                      elevation: 4.0,
+                                                      optionBackgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
+                                                      optionHighlightColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryBackground,
+                                                      maxHeight: 200.0,
+                                                    );
+                                                  },
+                                                  onSelected:
+                                                      (String selection) {
+                                                    setState(() => _model
+                                                            .searchTextFieldSelectedOption =
+                                                        selection);
+                                                    FocusScope.of(context)
+                                                        .unfocus();
+                                                  },
+                                                  fieldViewBuilder: (
+                                                    context,
+                                                    textEditingController,
+                                                    focusNode,
+                                                    onEditingComplete,
+                                                  ) {
+                                                    _model.searchTextFieldFocusNode =
+                                                        focusNode;
 
-                                            _model.searchTextFieldTextController =
-                                                textEditingController;
-                                            return TextFormField(
-                                              key: _model.searchTextFieldKey,
-                                              controller: textEditingController,
-                                              focusNode: focusNode,
-                                              onEditingComplete:
-                                                  onEditingComplete,
-                                              onChanged: (_) =>
-                                                  EasyDebounce.debounce(
-                                                '_model.searchTextFieldTextController',
-                                                const Duration(
-                                                    milliseconds: 2000),
-                                                () async {
-                                                  safeSetState(() {
-                                                    _model.simpleSearchResults =
-                                                        TextSearch(
-                                                      dashboardUsersRecordList
-                                                          .map(
-                                                            (record) =>
-                                                                TextSearchItem
-                                                                    .fromTerms(
-                                                                        record,
-                                                                        [
-                                                                  record.email,
-                                                                  record
-                                                                      .displayName
-                                                                ]),
-                                                          )
-                                                          .toList(),
-                                                    )
-                                                            .search(_model
-                                                                .searchTextFieldTextController
-                                                                .text)
-                                                            .map(
-                                                                (r) => r.object)
-                                                            .toList();
-                                                  });
-                                                  FFAppState().searchActive =
-                                                      true;
-                                                  setState(() {});
-                                                },
-                                              ),
-                                              autofocus: true,
-                                              obscureText: false,
-                                              decoration: InputDecoration(
-                                                labelText: 'Search',
-                                                labelStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintText: 'Search students...',
-                                                hintStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                ),
-                                                errorBorder: OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                ),
-                                                focusedErrorBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: const BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                ),
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
+                                                    _model.searchTextFieldTextController =
+                                                        textEditingController;
+                                                    return TextFormField(
+                                                      key: _model
+                                                          .searchTextFieldKey,
+                                                      controller:
+                                                          textEditingController,
+                                                      focusNode: focusNode,
+                                                      onEditingComplete:
+                                                          onEditingComplete,
+                                                      onChanged: (_) =>
+                                                          EasyDebounce.debounce(
+                                                        '_model.searchTextFieldTextController',
+                                                        const Duration(
+                                                            milliseconds: 2000),
+                                                        () async {
+                                                          safeSetState(() {
+                                                            _model.simpleSearchResults =
+                                                                TextSearch(
+                                                              dashboardUsersRecordList
+                                                                  .map(
+                                                                    (record) =>
+                                                                        TextSearchItem.fromTerms(
+                                                                            record,
+                                                                            [
+                                                                          record
+                                                                              .email,
+                                                                          record
+                                                                              .displayName
+                                                                        ]),
+                                                                  )
+                                                                  .toList(),
+                                                            )
+                                                                    .search(_model
+                                                                        .searchTextFieldTextController
+                                                                        .text)
+                                                                    .map((r) =>
+                                                                        r.object)
+                                                                    .toList();
+                                                          });
+                                                          FFAppState()
+                                                                  .searchActive =
+                                                              true;
+                                                          setState(() {});
+                                                        },
+                                                      ),
+                                                      autofocus: true,
+                                                      obscureText: false,
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText: 'Search',
+                                                        labelStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        hintText:
+                                                            'Search students...',
+                                                        hintStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        enabledBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .primaryText,
-                                                        letterSpacing: 0.0,
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                        ),
+                                                        focusedBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                        ),
+                                                        errorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                        ),
+                                                        focusedErrorBorder:
+                                                            OutlineInputBorder(
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Color(
+                                                                0x00000000),
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10.0),
+                                                        ),
                                                       ),
-                                              validator: _model
-                                                  .searchTextFieldTextControllerValidator
-                                                  .asValidator(context),
-                                            );
-                                          },
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                      validator: _model
+                                                          .searchTextFieldTextControllerValidator
+                                                          .asValidator(context),
+                                                    );
+                                                  },
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              decoration: BoxDecoration(
+                                                gradient: const LinearGradient(
+                                                  colors: [
+                                                    Color(0xFFF13DF2),
+                                                    Color(0xFF45E7F1)
+                                                  ],
+                                                  stops: [0.0, 1.0],
+                                                  begin: AlignmentDirectional(
+                                                      1.0, -1.0),
+                                                  end: AlignmentDirectional(
+                                                      -1.0, 1.0),
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              child: FlutterFlowIconButton(
+                                                borderColor: Colors.transparent,
+                                                borderRadius: 20.0,
+                                                borderWidth: 1.0,
+                                                buttonSize: 40.0,
+                                                fillColor: const Color(0x0001080B),
+                                                icon: const FaIcon(
+                                                  FontAwesomeIcons.magic,
+                                                  color: Colors.white,
+                                                ),
+                                                onPressed: () async {
+                                                  context.pushNamed('AIPage');
+                                                },
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                       if (FFAppState().searchActive)
                                         Padding(
-                                          padding: const EdgeInsetsDirectional
-                                              .fromSTEB(16.0, 10.0, 16.0, 0.0),
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 10.0, 16.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -470,9 +552,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                         ),
                                               ),
                                               Padding(
-                                                padding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
                                                         5.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   _model.simpleSearchResults
@@ -524,8 +605,11 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                       return Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(16.0,
-                                                                8.0, 16.0, 0.0),
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    8.0,
+                                                                    16.0,
+                                                                    0.0),
                                                         child:
                                                             SingleChildScrollView(
                                                           primary: false,
@@ -538,10 +622,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                        8.0,
-                                                                        8.0,
-                                                                        8.0,
-                                                                        8.0),
+                                                                            8.0,
+                                                                            8.0,
+                                                                            8.0,
+                                                                            8.0),
                                                                 child: InkWell(
                                                                   splashColor:
                                                                       Colors
@@ -724,8 +808,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                         ),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               4.0,
                                                                               4.0,
                                                                               4.0,
@@ -780,8 +863,11 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                       return Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(16.0,
-                                                                8.0, 16.0, 0.0),
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    8.0,
+                                                                    16.0,
+                                                                    0.0),
                                                         child:
                                                             SingleChildScrollView(
                                                           child: Column(
@@ -793,10 +879,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                 padding:
                                                                     const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                        8.0,
-                                                                        8.0,
-                                                                        8.0,
-                                                                        8.0),
+                                                                            8.0,
+                                                                            8.0,
+                                                                            8.0,
+                                                                            8.0),
                                                                 child: InkWell(
                                                                   splashColor:
                                                                       Colors
@@ -980,8 +1066,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                         ),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               4.0,
                                                                               4.0,
                                                                               4.0,
@@ -1034,20 +1119,19 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsetsDirectional
-                                              .fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        -1.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
                                                 child: Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(24.0, 10.0,
-                                                          0.0, 16.0),
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(24.0, 10.0, 0.0,
+                                                          16.0),
                                                   child: Text(
                                                     'Inbox',
                                                     style: FlutterFlowTheme.of(
@@ -1066,19 +1150,20 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                               ),
                                               if (true == false)
                                                 Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: Container(
                                                     height: 50.0,
-                                                    decoration:
-                                                        const BoxDecoration(),
+                                                    decoration: const BoxDecoration(),
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(24.0,
-                                                              0.0, 24.0, 0.0),
+                                                              .fromSTEB(
+                                                                  24.0,
+                                                                  0.0,
+                                                                  24.0,
+                                                                  0.0),
                                                       child: TextFormField(
                                                         controller: _model
                                                             .textController2,
@@ -1166,8 +1251,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                     .circular(
                                                                         16.0),
                                                           ),
-                                                          suffixIcon:
-                                                              const Icon(
+                                                          suffixIcon: const Icon(
                                                             Icons
                                                                 .search_rounded,
                                                           ),
@@ -1249,10 +1333,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                    0.0,
-                                                                    1.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                        0.0,
+                                                                        1.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: InkWell(
                                                               splashColor: Colors
                                                                   .transparent,
@@ -1301,10 +1385,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                       Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                        12.0,
-                                                                        12.0,
-                                                                        12.0,
-                                                                        12.0),
+                                                                            12.0,
+                                                                            12.0,
+                                                                            12.0,
+                                                                            12.0),
                                                                     child: StreamBuilder<
                                                                         UsersRecord>(
                                                                       stream: UsersRecord.getDocument(listViewChatsRecord
@@ -1452,8 +1536,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                   );
                                                 },
                                               ),
-                                              if (dashboardUsersRecordList
-                                                  .isEmpty)
+                                              if (dashboardUsersRecordList.isEmpty)
                                                 Text(
                                                   'You have no chat history',
                                                   style: FlutterFlowTheme.of(
@@ -1470,8 +1553,9 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                         Opacity(
                                           opacity: 0.0,
                                           child: Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0.0, 0.0, 0.0, 20.0),
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 20.0),
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -1489,9 +1573,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                               child: Opacity(
                                                 opacity: 0.5,
                                                 child: Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(25.0, 20.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(25.0, 20.0,
                                                           25.0, 20.0),
                                                   child: Container(
                                                     height: MediaQuery.sizeOf(
@@ -1504,8 +1587,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                   context)
                                                               .primary,
                                                       borderRadius:
-                                                          const BorderRadius
-                                                              .only(
+                                                          const BorderRadius.only(
                                                         bottomLeft:
                                                             Radius.circular(
                                                                 75.0),
@@ -1524,8 +1606,11 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(16.0,
-                                                              0.0, 16.0, 0.0),
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
                                                       child: Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1594,12 +1679,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                         .primaryBackground,
                                   ),
                                   child: Align(
-                                    alignment:
-                                        const AlignmentDirectional(0.0, -1.0),
+                                    alignment: const AlignmentDirectional(0.0, -1.0),
                                     child: Padding(
-                                      padding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              8.0, 0.0, 8.0, 0.0),
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 0.0, 8.0, 0.0),
                                       child: SingleChildScrollView(
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -1609,10 +1692,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 0.0, 0.0, 8.0),
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 8.0),
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -1628,9 +1709,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                       .primaryBackground,
                                                 ),
                                                 child: Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                                   child: Row(
                                                     mainAxisSize:
@@ -1650,10 +1730,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                           padding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  6.0,
-                                                                  0.0),
+                                                                      0.0,
+                                                                      0.0,
+                                                                      6.0,
+                                                                      0.0),
                                                           child: Container(
                                                             width: 125.0,
                                                             height: 125.0,
@@ -1693,10 +1773,9 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                   ),
                                                                 ),
                                                                 if (valueOrDefault(
-                                                                        currentUserDocument
-                                                                            ?.linkedinURL,
-                                                                        '') !=
-                                                                    '')
+                                                                            currentUserDocument?.linkedinURL,
+                                                                            '') !=
+                                                                        '')
                                                                   Align(
                                                                     alignment:
                                                                         const AlignmentDirectional(
@@ -1761,10 +1840,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                             padding:
                                                                 const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -1815,8 +1894,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1837,8 +1915,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1861,8 +1938,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1897,13 +1973,11 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                               ),
                                             ),
                                             Align(
-                                              alignment:
-                                                  const AlignmentDirectional(
-                                                      -1.0, 0.0),
+                                              alignment: const AlignmentDirectional(
+                                                  -1.0, 0.0),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: AuthUserStreamWidget(
                                                   builder: (context) => Text(
@@ -1923,10 +1997,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 8.0, 0.0, 8.0),
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
                                               child: wrapWithModel(
                                                 model: _model
                                                     .selfProfileElementModel,
@@ -1934,6 +2006,49 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     setState(() {}),
                                                 child:
                                                     const SelfProfileElementWidget(),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 10.0, 20.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  context.pushNamed(
+                                                      'ExportResume');
+                                                },
+                                                text: 'Generate Resume',
+                                                options: FFButtonOptions(
+                                                  width: double.infinity,
+                                                  height: 40.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: Colors.white,
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  elevation: 3.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
                                               ),
                                             ),
                                             Card(
@@ -1973,7 +2088,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     contentPadding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
-                                                            16.0, 0.0),
+                                                                16.0, 0.0),
                                                   ),
                                                   AuthUserStreamWidget(
                                                     builder: (context) =>
@@ -2034,8 +2149,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                           ),
                                                                           dense:
                                                                               false,
-                                                                          contentPadding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               0.0,
                                                                               16.0,
@@ -2051,8 +2165,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           16.0,
@@ -2065,8 +2178,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             const BoxDecoration(),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               0.0,
                                                                               0.0,
@@ -2089,8 +2201,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                       ? false
                                                                       : true)
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           8.0,
                                                                           0.0,
@@ -2152,7 +2263,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     contentPadding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
-                                                            16.0, 0.0),
+                                                                16.0, 0.0),
                                                   ),
                                                   AuthUserStreamWidget(
                                                     builder: (context) =>
@@ -2213,8 +2324,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                           ),
                                                                           dense:
                                                                               false,
-                                                                          contentPadding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               16.0,
@@ -2223,8 +2333,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                         Builder(
                                                                           builder:
                                                                               (context) {
-                                                                            if (queryItem.photoUrl !=
-                                                                                '') {
+                                                                            if (queryItem.photoUrl != '') {
                                                                               return Padding(
                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 8.0, 0.0),
                                                                                 child: ClipRRect(
@@ -2261,8 +2370,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           16.0,
@@ -2275,8 +2383,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             const BoxDecoration(),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               0.0,
@@ -2341,7 +2448,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     contentPadding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
-                                                            16.0, 0.0),
+                                                                16.0, 0.0),
                                                   ),
                                                   AuthUserStreamWidget(
                                                     builder: (context) =>
@@ -2402,8 +2509,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                           ),
                                                                           dense:
                                                                               false,
-                                                                          contentPadding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               16.0,
@@ -2412,8 +2518,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                         Builder(
                                                                           builder:
                                                                               (context) {
-                                                                            if (queryItem.photoUrl !=
-                                                                                '') {
+                                                                            if (queryItem.photoUrl != '') {
                                                                               return Padding(
                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 8.0, 0.0),
                                                                                 child: ClipRRect(
@@ -2450,8 +2555,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           16.0,
@@ -2464,8 +2568,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             const BoxDecoration(),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               0.0,
@@ -2530,7 +2633,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     contentPadding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
-                                                            16.0, 0.0),
+                                                                16.0, 0.0),
                                                   ),
                                                   AuthUserStreamWidget(
                                                     builder: (context) =>
@@ -2591,8 +2694,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                           ),
                                                                           dense:
                                                                               false,
-                                                                          contentPadding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               16.0,
@@ -2601,8 +2703,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                         Builder(
                                                                           builder:
                                                                               (context) {
-                                                                            if (queryItem.photoUrl !=
-                                                                                '') {
+                                                                            if (queryItem.photoUrl != '') {
                                                                               return Padding(
                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 8.0, 0.0),
                                                                                 child: ClipRRect(
@@ -2639,8 +2740,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           16.0,
@@ -2653,8 +2753,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             const BoxDecoration(),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               0.0,
@@ -2719,7 +2818,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     contentPadding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
-                                                            16.0, 0.0),
+                                                                16.0, 0.0),
                                                   ),
                                                   AuthUserStreamWidget(
                                                     builder: (context) =>
@@ -2780,8 +2879,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                           ),
                                                                           dense:
                                                                               false,
-                                                                          contentPadding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               16.0,
@@ -2790,8 +2888,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                         Builder(
                                                                           builder:
                                                                               (context) {
-                                                                            if (queryItem.photoUrl !=
-                                                                                '') {
+                                                                            if (queryItem.photoUrl != '') {
                                                                               return Padding(
                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 8.0, 0.0),
                                                                                 child: ClipRRect(
@@ -2828,8 +2925,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           16.0,
@@ -2842,8 +2938,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             const BoxDecoration(),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               0.0,
@@ -2908,7 +3003,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     contentPadding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
-                                                            16.0, 0.0),
+                                                                16.0, 0.0),
                                                   ),
                                                   AuthUserStreamWidget(
                                                     builder: (context) =>
@@ -2969,8 +3064,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                           ),
                                                                           dense:
                                                                               false,
-                                                                          contentPadding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               16.0,
@@ -2979,8 +3073,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                         Builder(
                                                                           builder:
                                                                               (context) {
-                                                                            if (queryItem.photoUrl !=
-                                                                                '') {
+                                                                            if (queryItem.photoUrl != '') {
                                                                               return Padding(
                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 8.0, 0.0),
                                                                                 child: ClipRRect(
@@ -3017,8 +3110,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           16.0,
@@ -3031,8 +3123,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             const BoxDecoration(),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               0.0,
@@ -3097,7 +3188,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     contentPadding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
-                                                            16.0, 0.0),
+                                                                16.0, 0.0),
                                                   ),
                                                   AuthUserStreamWidget(
                                                     builder: (context) =>
@@ -3158,8 +3249,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                           ),
                                                                           dense:
                                                                               false,
-                                                                          contentPadding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               16.0,
@@ -3168,8 +3258,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                         Builder(
                                                                           builder:
                                                                               (context) {
-                                                                            if (queryItem.photoUrl !=
-                                                                                '') {
+                                                                            if (queryItem.photoUrl != '') {
                                                                               return Padding(
                                                                                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 8.0, 0.0),
                                                                                 child: ClipRRect(
@@ -3206,8 +3295,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional
-                                                                          .fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           16.0,
@@ -3220,8 +3308,7 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                             const BoxDecoration(),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional
-                                                                              .fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               76.0,
                                                                               0.0,
                                                                               0.0,

@@ -40,6 +40,10 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   FocusNode? nameFocusNode;
   TextEditingController? nameTextController;
   String? Function(BuildContext, String?)? nameTextControllerValidator;
+  // State field(s) for phone_number widget.
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
   // State field(s) for school widget.
   FocusNode? schoolFocusNode;
   TextEditingController? schoolTextController;
@@ -71,6 +75,9 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   void dispose() {
     nameFocusNode?.dispose();
     nameTextController?.dispose();
+
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
 
     schoolFocusNode?.dispose();
     schoolTextController?.dispose();

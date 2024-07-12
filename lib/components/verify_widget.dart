@@ -105,8 +105,7 @@ class _VerifyWidgetState extends State<VerifyWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 24.0, 8.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 24.0, 8.0),
                 child: Text(
                   'Profile Incomplete!',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -116,8 +115,7 @@ class _VerifyWidgetState extends State<VerifyWidget>
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 24.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 24.0, 0.0),
                 child: Text(
                   'Please fill out all required portions of your profile',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -134,8 +132,7 @@ class _VerifyWidgetState extends State<VerifyWidget>
                 color: FlutterFlowTheme.of(context).primaryBackground,
               ),
               Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 12.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 12.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -149,8 +146,8 @@ class _VerifyWidgetState extends State<VerifyWidget>
                         height: 44.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 0.0),
-                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(

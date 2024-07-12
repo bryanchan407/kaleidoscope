@@ -87,8 +87,7 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                 child: Align(
                   alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        8.0, 0.0, 8.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -139,14 +138,12 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                     decoration: const BoxDecoration(
                                       color: Color(0x00F2F2F7),
                                     ),
-                                    alignment:
-                                        const AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional
-                                            .fromSTEB(0.0, 0.0, 8.0, 0.0),
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 8.0, 0.0),
                                         child: FlutterFlowIconButton(
                                           borderColor:
                                               FlutterFlowTheme.of(context)
@@ -217,11 +214,10 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment:
-                                          const AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional
-                                            .fromSTEB(0.0, 0.0, 6.0, 0.0),
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 6.0, 0.0),
                                         child: Container(
                                           width: 125.0,
                                           height: 125.0,
@@ -253,8 +249,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                 ),
                                               ),
                                               if (viewProfileUsersRecord
-                                                      .linkedinURL !=
-                                                  '')
+                                                          .linkedinURL !=
+                                                      '')
                                                 Align(
                                                   alignment:
                                                       const AlignmentDirectional(
@@ -301,8 +297,9 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                               .primaryBackground,
                                         ),
                                         child: Padding(
-                                          padding: const EdgeInsetsDirectional
-                                              .fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -311,9 +308,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        -1.0, -1.0),
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, -1.0),
                                                 child: Text(
                                                   viewProfileUsersRecord
                                                       .displayName,
@@ -338,8 +334,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                            0.0, 0.0, 0.0, 4.0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 4.0),
                                                     child: Text(
                                                       'Student at ${viewProfileUsersRecord.school}',
                                                       style: FlutterFlowTheme
@@ -354,8 +350,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                            0.0, 0.0, 0.0, 4.0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 4.0),
                                                     child: Text(
                                                       viewProfileUsersRecord
                                                           .state,
@@ -371,8 +367,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                            0.0, 0.0, 0.0, 4.0),
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 4.0),
                                                     child: Text(
                                                       viewProfileUsersRecord
                                                           .major,
@@ -422,9 +418,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            6.0, 0.0, 0.0, 0.0),
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        6.0, 0.0, 0.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         if ((widget.chatRef != null) &&
@@ -557,10 +552,11 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                       text: 'Message',
                                       options: FFButtonOptions(
                                         height: 36.0,
-                                        padding: const EdgeInsetsDirectional
-                                            .fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                        iconPadding: const EdgeInsetsDirectional
-                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -589,9 +585,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            6.0, 0.0, 6.0, 0.0),
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        6.0, 0.0, 6.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () {
                                         print('Button pressed ...');
@@ -599,10 +594,11 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                       text: 'Share',
                                       options: FFButtonOptions(
                                         height: 36.0,
-                                        padding: const EdgeInsetsDirectional
-                                            .fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                        iconPadding: const EdgeInsetsDirectional
-                                            .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        iconPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                         textStyle: FlutterFlowTheme.of(context)
@@ -741,8 +737,11 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                         dense: false,
                                                         contentPadding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(16.0,
-                                                                0.0, 16.0, 0.0),
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0),
                                                       ),
                                                     ],
                                                   ),
@@ -755,7 +754,7 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
-                                                            16.0, 0.0),
+                                                                16.0, 0.0),
                                                     child: Container(
                                                       width: MediaQuery.sizeOf(
                                                                   context)
@@ -766,8 +765,11 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
-                                                                .fromSTEB(16.0,
-                                                                0.0, 0.0, 8.0),
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    8.0),
                                                         child: Text(
                                                           queryItem.description,
                                                           style: FlutterFlowTheme
@@ -791,8 +793,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                            0.0, 8.0, 0.0, 0.0),
+                                                            .fromSTEB(0.0, 8.0,
+                                                                0.0, 0.0),
                                                     child:
                                                         CarouselOfImagesWidget(
                                                       key: Key(
@@ -863,9 +865,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        0.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
                                                 child: Stack(
                                                   children: [
                                                     ListTile(
@@ -901,14 +902,20 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                       dense: false,
                                                       contentPadding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(76.0,
-                                                              0.0, 16.0, 0.0),
+                                                              .fromSTEB(
+                                                                  76.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
                                                     ),
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(16.0,
-                                                              8.0, 8.0, 0.0),
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  8.0,
+                                                                  8.0,
+                                                                  0.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -929,9 +936,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        -1.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
@@ -946,7 +952,7 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(76.0, 0.0,
-                                                            0.0, 8.0),
+                                                                0.0, 8.0),
                                                     child: Text(
                                                       queryItem.description,
                                                       style: FlutterFlowTheme
@@ -1021,9 +1027,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        0.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
                                                 child: Stack(
                                                   children: [
                                                     ListTile(
@@ -1059,14 +1064,20 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                       dense: false,
                                                       contentPadding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(76.0,
-                                                              0.0, 16.0, 0.0),
+                                                              .fromSTEB(
+                                                                  76.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
                                                     ),
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(16.0,
-                                                              8.0, 8.0, 0.0),
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  8.0,
+                                                                  8.0,
+                                                                  0.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -1087,9 +1098,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        -1.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
@@ -1104,7 +1114,7 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(76.0, 0.0,
-                                                            0.0, 8.0),
+                                                                0.0, 8.0),
                                                     child: Text(
                                                       queryItem.description,
                                                       style: FlutterFlowTheme
@@ -1180,9 +1190,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        0.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
                                                 child: Stack(
                                                   children: [
                                                     ListTile(
@@ -1218,14 +1227,20 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                       dense: false,
                                                       contentPadding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(76.0,
-                                                              0.0, 16.0, 0.0),
+                                                              .fromSTEB(
+                                                                  76.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
                                                     ),
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(16.0,
-                                                              8.0, 8.0, 0.0),
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  8.0,
+                                                                  8.0,
+                                                                  0.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -1246,9 +1261,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        -1.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
@@ -1263,7 +1277,7 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(76.0, 0.0,
-                                                            0.0, 8.0),
+                                                                0.0, 8.0),
                                                     child: Text(
                                                       queryItem.description,
                                                       style: FlutterFlowTheme
@@ -1338,9 +1352,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        0.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
                                                 child: Stack(
                                                   children: [
                                                     ListTile(
@@ -1376,14 +1389,20 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                       dense: false,
                                                       contentPadding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(76.0,
-                                                              0.0, 16.0, 0.0),
+                                                              .fromSTEB(
+                                                                  76.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
                                                     ),
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(16.0,
-                                                              8.0, 8.0, 0.0),
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  8.0,
+                                                                  8.0,
+                                                                  0.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -1404,9 +1423,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        -1.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
@@ -1421,7 +1439,7 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(76.0, 0.0,
-                                                            0.0, 8.0),
+                                                                0.0, 8.0),
                                                     child: Text(
                                                       queryItem.description,
                                                       style: FlutterFlowTheme
@@ -1497,9 +1515,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        0.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
                                                 child: Stack(
                                                   children: [
                                                     ListTile(
@@ -1535,14 +1552,20 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                       dense: false,
                                                       contentPadding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(76.0,
-                                                              0.0, 16.0, 0.0),
+                                                              .fromSTEB(
+                                                                  76.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
                                                     ),
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(16.0,
-                                                              8.0, 8.0, 0.0),
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  8.0,
+                                                                  8.0,
+                                                                  0.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -1563,9 +1586,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        -1.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
@@ -1580,7 +1602,7 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(76.0, 0.0,
-                                                            0.0, 8.0),
+                                                                0.0, 8.0),
                                                     child: Text(
                                                       queryItem.description,
                                                       style: FlutterFlowTheme
@@ -1656,9 +1678,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        0.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.0),
                                                 child: Stack(
                                                   children: [
                                                     ListTile(
@@ -1694,14 +1715,20 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                       dense: false,
                                                       contentPadding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(76.0,
-                                                              0.0, 16.0, 0.0),
+                                                              .fromSTEB(
+                                                                  76.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
                                                     ),
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(16.0,
-                                                              8.0, 8.0, 0.0),
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  8.0,
+                                                                  8.0,
+                                                                  0.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -1722,9 +1749,8 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment:
-                                                    const AlignmentDirectional(
-                                                        -1.0, 0.0),
+                                                alignment: const AlignmentDirectional(
+                                                    -1.0, 0.0),
                                                 child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
@@ -1739,7 +1765,7 @@ class _ViewProfileWidgetState extends State<ViewProfileWidget> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(76.0, 0.0,
-                                                            0.0, 8.0),
+                                                                0.0, 8.0),
                                                     child: Text(
                                                       queryItem.description,
                                                       style: FlutterFlowTheme

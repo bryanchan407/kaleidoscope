@@ -49,8 +49,9 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
       FFAppState().classes = (currentUserDocument?.classes.toList() ?? [])
           .toList()
           .cast<EcStruct>();
-      FFAppState().clubs =
-          (currentUserDocument?.clubs.toList() ?? []).toList().cast<EcStruct>();
+      FFAppState().clubs = (currentUserDocument?.clubs.toList() ?? [])
+          .toList()
+          .cast<EcStruct>();
       FFAppState().performingArts =
           (currentUserDocument?.performingArts.toList() ?? [])
               .toList()
@@ -84,16 +85,15 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
         child: Stack(
           children: [
             Padding(
-              padding:
-                  const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
               child: PageView(
                 controller: _model.pageViewController ??=
                     PageController(initialPage: 0),
                 scrollDirection: Axis.horizontal,
                 children: [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        16.0, 8.0, 16.0, 8.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -188,9 +188,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                           0.0, 0.0, 0.0, 8.0),
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
@@ -234,8 +233,9 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                                             ? false
                                             : true)
                                           Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 8.0, 0.0, 0.0),
                                             child: CarouselOfImagesWidget(
                                               key: Key(
                                                   'Keyy9r_${generateIndex}_of_${generate.length}'),
@@ -255,8 +255,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        16.0, 8.0, 16.0, 8.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -363,9 +363,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                           0.0, 0.0, 0.0, 8.0),
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
@@ -411,8 +410,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        16.0, 8.0, 16.0, 8.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -519,9 +518,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                           0.0, 0.0, 0.0, 8.0),
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
@@ -567,8 +565,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        16.0, 8.0, 16.0, 8.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -675,9 +673,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                           0.0, 0.0, 0.0, 8.0),
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
@@ -723,8 +720,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        16.0, 8.0, 16.0, 8.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -831,9 +828,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                           0.0, 0.0, 0.0, 8.0),
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
@@ -879,8 +875,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        16.0, 8.0, 16.0, 8.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -989,9 +985,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                           0.0, 0.0, 0.0, 8.0),
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
@@ -1037,8 +1032,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        16.0, 8.0, 16.0, 8.0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 8.0),
                     child: Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -1147,9 +1142,8 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
                                                   MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                           0.0, 0.0, 0.0, 8.0),
                                                   child: FlutterFlowIconButton(
                                                     borderColor:
@@ -1200,8 +1194,7 @@ class _BigDaddyWidgetState extends State<BigDaddyWidget> {
             Align(
               alignment: const AlignmentDirectional(-1.0, 1.0),
               child: Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 16.0),
                 child: smooth_page_indicator.SmoothPageIndicator(
                   controller: _model.pageViewController ??=
                       PageController(initialPage: 0),

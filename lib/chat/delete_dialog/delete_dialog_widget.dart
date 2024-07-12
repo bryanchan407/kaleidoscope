@@ -104,8 +104,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(
-                      12.0, 12.0, 0.0, 8.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
                   child: Text(
                     'Options',
                     textAlign: TextAlign.start,
@@ -142,8 +141,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 8.0, 0.0, 8.0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -274,8 +273,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            0.0, 8.0, 12.0, 8.0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -285,9 +284,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 4.0),
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 0.0, 4.0),
                                     child: Text(
                                       'Confirm Delete',
                                       textAlign: TextAlign.start,
@@ -300,9 +298,8 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'You can\'t undo this action.',
                                       style: FlutterFlowTheme.of(context)

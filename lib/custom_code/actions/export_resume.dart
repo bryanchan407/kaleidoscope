@@ -1,11 +1,17 @@
 // Automatic FlutterFlow imports
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
+import '/backend/schema/enums/enums.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-// Imports other custom actions
-// Imports custom functions
+import 'index.dart'; // Imports other custom actions
+import '/flutter_flow/custom_functions.dart'; // Imports custom functions
+import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
+
+// Imports other custom actions
+// Imports custom functions
 
 import 'package:printing/printing.dart';
 import 'package:pdf/pdf.dart';
@@ -41,23 +47,29 @@ Future<FFUploadedFile>? exportResume(
                       crossAxisAlignment: pw.CrossAxisAlignment.start,
                       children: [
                         pw.Text(item.title,
-                            style: pw.TextStyle(font: font, fontSize: 14)),
+                            style: pw.TextStyle(
+                                font: font,
+                                color: PdfColors.green900,
+                                fontSize: 12)),
                         pw.Text(item.subtitle,
-                            style: pw.TextStyle(font: font, fontSize: 12)),
-                        pw.Text(item.description,
                             style: pw.TextStyle(font: font, fontSize: 10)),
+                        pw.Text(item.description,
+                            style: pw.TextStyle(
+                                font: font,
+                                color: PdfColors.grey800,
+                                fontSize: 8)),
                         pw.Divider()
                       ]))
               .toList(),
         ));
   }
 
-  pdf.addPage(pw.Page(
+  pdf.addPage(pw.MultiPage(
       pageFormat: PdfPageFormat.a4,
       build: (pw.Context context) {
-        return pw.Column(children: [
+        return [
           pw.Column(children: [
-            pw.Text(fullName!, style: pw.TextStyle(font: font, fontSize: 24)),
+            pw.Text(fullName!, style: pw.TextStyle(font: font, fontSize: 22)),
             pw.Text(phoneNumber!,
                 style: pw.TextStyle(font: font, fontSize: 16)),
             pw.Text(email!, style: pw.TextStyle(font: font, fontSize: 16)),
@@ -78,21 +90,21 @@ Future<FFUploadedFile>? exportResume(
             child: pw.Header(
                 level: 1,
                 child: pw.Text('Education',
-                    style: pw.TextStyle(font: font, fontSize: 20))),
+                    style: pw.TextStyle(font: font, fontSize: 18))),
           ),
           buildRow(classes),
           pw.Container(
             child: pw.Header(
                 level: 1,
                 child: pw.Text('Projects',
-                    style: pw.TextStyle(font: font, fontSize: 20))),
+                    style: pw.TextStyle(font: font, fontSize: 18))),
           ),
           buildRow(personalProjects),
           pw.Container(
             child: pw.Header(
                 level: 1,
                 child: pw.Text('Extracurriculars',
-                    style: pw.TextStyle(font: font, fontSize: 20))),
+                    style: pw.TextStyle(font: font, fontSize: 18))),
           ),
           buildRow(athletics),
           buildRow(performingArts),
@@ -102,10 +114,10 @@ Future<FFUploadedFile>? exportResume(
             child: pw.Header(
                 level: 1,
                 child: pw.Text('Awards',
-                    style: pw.TextStyle(font: font, fontSize: 20))),
+                    style: pw.TextStyle(font: font, fontSize: 18))),
           ),
           buildRow(awards)
-        ]); // Center
+        ]; // Center
       })); // Page
 
   // final output = await getTemporaryDirectory();

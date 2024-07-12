@@ -203,8 +203,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                             child: Stack(
                               children: [
                                 Align(
-                                  alignment:
-                                      const AlignmentDirectional(1.0, 1.0),
+                                  alignment: const AlignmentDirectional(1.0, 1.0),
                                   child: FutureBuilder<UsersRecord>(
                                     future: UsersRecord.getDocumentOnce(widget
                                         .chatRef!.users
@@ -248,22 +247,19 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                         child: Builder(
                                           builder: (context) {
                                             if (secondUserUsersRecord
-                                                    .photoUrl !=
-                                                '') {
+                                                        .photoUrl !=
+                                                    '') {
                                               return Padding(
-                                                padding:
-                                                    const EdgeInsets.all(2.0),
+                                                padding: const EdgeInsets.all(2.0),
                                                 child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
                                                   child: CachedNetworkImage(
-                                                    fadeInDuration:
-                                                        const Duration(
-                                                            milliseconds: 200),
-                                                    fadeOutDuration:
-                                                        const Duration(
-                                                            milliseconds: 200),
+                                                    fadeInDuration: const Duration(
+                                                        milliseconds: 200),
+                                                    fadeOutDuration: const Duration(
+                                                        milliseconds: 200),
                                                     imageUrl:
                                                         valueOrDefault<String>(
                                                       secondUserUsersRecord
@@ -278,8 +274,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                               );
                                             } else {
                                               return Padding(
-                                                padding:
-                                                    const EdgeInsets.all(2.0),
+                                                padding: const EdgeInsets.all(2.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 100.0,
@@ -322,8 +317,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment:
-                                      const AlignmentDirectional(-1.0, -1.0),
+                                  alignment: const AlignmentDirectional(-1.0, -1.0),
                                   child: Container(
                                     width: 32.0,
                                     height: 32.0,
@@ -341,18 +335,18 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                     child: Builder(
                                       builder: (context) {
                                         if (conditionalBuilderUsersRecord
-                                                .photoUrl !=
-                                            '') {
+                                                    .photoUrl !=
+                                                '') {
                                           return Padding(
                                             padding: const EdgeInsets.all(2.0),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                               child: CachedNetworkImage(
-                                                fadeInDuration: const Duration(
-                                                    milliseconds: 200),
-                                                fadeOutDuration: const Duration(
-                                                    milliseconds: 200),
+                                                fadeInDuration:
+                                                    const Duration(milliseconds: 200),
+                                                fadeOutDuration:
+                                                    const Duration(milliseconds: 200),
                                                 imageUrl:
                                                     valueOrDefault<String>(
                                                   conditionalBuilderUsersRecord
@@ -378,9 +372,8 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                               ),
-                                              alignment:
-                                                  const AlignmentDirectional(
-                                                      0.0, 0.0),
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   conditionalBuilderUsersRecord
@@ -454,8 +447,7 @@ class _Chat2DetailsWidgetState extends State<Chat2DetailsWidget> {
           ),
           actions: [
             Padding(
-              padding:
-                  const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 16.0, 8.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 16.0, 8.0),
               child: FlutterFlowIconButton(
                 borderColor: FlutterFlowTheme.of(context).primary,
                 borderRadius: 12.0,

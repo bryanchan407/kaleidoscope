@@ -19,3 +19,4 @@ export '/email_verification/email_verification_widget.dart'
 export '/minor_pages/terms_and_conditions/terms_and_conditions_widget.dart'
     show TermsAndConditionsWidget;
 export '/export_resume/export_resume_widget.dart' show ExportResumeWidget;
+export '/minor_pages/a_i_page/a_i_page_widget.dart' show AIPageWidget;

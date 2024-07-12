@@ -73,40 +73,40 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? DashboardWidget()
-          : AuthenticationWidget(),
+          ? const DashboardWidget()
+          : const AuthenticationWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? DashboardWidget()
-              : AuthenticationWidget(),
+              ? const DashboardWidget()
+              : const AuthenticationWidget(),
         ),
         FFRoute(
           name: 'Dashboard',
           path: '/dashboard',
-          builder: (context, params) => DashboardWidget(),
+          builder: (context, params) => const DashboardWidget(),
         ),
         FFRoute(
           name: 'Authentication',
           path: '/authentication',
-          builder: (context, params) => AuthenticationWidget(),
+          builder: (context, params) => const AuthenticationWidget(),
         ),
         FFRoute(
           name: 'ProfileCreate',
           path: '/profileCreate',
-          builder: (context, params) => ProfileCreateWidget(),
+          builder: (context, params) => const ProfileCreateWidget(),
         ),
         FFRoute(
           name: 'EditProfile',
           path: '/editProfile',
-          builder: (context, params) => EditProfileWidget(),
+          builder: (context, params) => const EditProfileWidget(),
         ),
         FFRoute(
           name: 'SearchProfiles',
           path: '/searchProfiles',
-          builder: (context, params) => SearchProfilesWidget(),
+          builder: (context, params) => const SearchProfilesWidget(),
         ),
         FFRoute(
           name: 'ViewProfile',
@@ -143,7 +143,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'chat_2_main',
           path: '/chat2Main',
-          builder: (context, params) => Chat2MainWidget(),
+          builder: (context, params) => const Chat2MainWidget(),
         ),
         FFRoute(
           name: 'chat_2_InviteUsers',
@@ -175,17 +175,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'EmailVerification',
           path: '/emailVerification',
-          builder: (context, params) => EmailVerificationWidget(),
+          builder: (context, params) => const EmailVerificationWidget(),
         ),
         FFRoute(
           name: 'termsAndConditions',
           path: '/TermsAndConditions',
-          builder: (context, params) => TermsAndConditionsWidget(),
+          builder: (context, params) => const TermsAndConditionsWidget(),
         ),
         FFRoute(
           name: 'ExportResume',
           path: '/exportResume',
-          builder: (context, params) => ExportResumeWidget(),
+          builder: (context, params) => const ExportResumeWidget(),
+        ),
+        FFRoute(
+          name: 'AIPage',
+          path: '/aIPage',
+          builder: (context, params) => const AIPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -373,15 +378,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  child: Image.asset(
+                    'assets/images/Screenshot_2024-06-26_191629.png',
+                    fit: BoxFit.contain,
                   ),
                 )
               : page;
@@ -426,7 +427,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

@@ -37,6 +37,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
         TextEditingController(text: currentUserDisplayName);
     _model.nameFocusNode ??= FocusNode();
 
+    _model.phoneNumberTextController ??=
+        TextEditingController(text: currentPhoneNumber);
+    _model.phoneNumberFocusNode ??= FocusNode();
+
     _model.schoolTextController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.school, ''));
     _model.schoolFocusNode ??= FocusNode();
@@ -78,16 +82,14 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
           actions: const [],
           flexibleSpace: FlexibleSpaceBar(
             title: Padding(
-              padding:
-                  const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
-                        0.0, 0.0, 0.0, 8.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -132,8 +134,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 16.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: Stack(
                         children: [
                           InkWell(
@@ -253,8 +255,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => TextFormField(
                           controller: _model.nameTextController,
@@ -306,9 +308,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding:
-                                const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 24.0, 0.0, 24.0),
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 0.0, 24.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -322,8 +323,76 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                      child: AuthUserStreamWidget(
+                        builder: (context) => TextFormField(
+                          controller: _model.phoneNumberTextController,
+                          focusNode: _model.phoneNumberFocusNode,
+                          textCapitalization: TextCapitalization.sentences,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                            hintText: 'Phone Number',
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).secondary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).error,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            filled: true,
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 0.0, 24.0),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                          textAlign: TextAlign.start,
+                          validator: _model.phoneNumberTextControllerValidator
+                              .asValidator(context),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => TextFormField(
                           controller: _model.schoolTextController,
@@ -375,9 +444,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding:
-                                const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 24.0, 0.0, 24.0),
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 0.0, 24.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -391,8 +459,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => FlutterFlowDropDown<String>(
                           controller: _model.stateValueController ??=
@@ -482,8 +550,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => TextFormField(
                           controller: _model.majorTextController,
@@ -535,9 +603,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding:
-                                const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 24.0, 0.0, 24.0),
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 0.0, 24.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -551,8 +618,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => TextFormField(
                           controller: _model.descriptionTextController,
@@ -604,9 +671,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding:
-                                const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 24.0, 0.0, 24.0),
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 0.0, 24.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -622,8 +688,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 0.0, 16.0, 12.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                       child: AuthUserStreamWidget(
                         builder: (context) => TextFormField(
                           controller: _model.linkedinIDTextController,
@@ -675,9 +741,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding:
-                                const EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 24.0, 0.0, 24.0),
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                20.0, 24.0, 0.0, 24.0),
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -722,8 +787,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
               alignment: const AlignmentDirectional(0.0, 1.0),
               child: Builder(
                 builder: (context) => Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(
-                      0.0, 24.0, 0.0, 24.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 24.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await currentUserReference!.update({
@@ -745,6 +809,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             }
                           }(),
                           linkedinURL: _model.linkedinIDTextController.text,
+                          phoneNumber: _model.phoneNumberTextController.text,
                         ),
                         ...mapToFirestore(
                           {
@@ -779,7 +844,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           (_model.stateValue != null &&
                               _model.stateValue != '') &&
                           (_model.majorTextController.text != '') &&
-                          (_model.descriptionTextController.text != '')) {
+                          (_model.descriptionTextController.text != '') &&
+                          (_model.phoneNumberTextController.text != '')) {
                         context.pushNamed('Dashboard');
                       } else {
                         await showDialog(
@@ -805,10 +871,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     options: FFButtonOptions(
                       width: 270.0,
                       height: 50.0,
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 0.0),
-                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 0.0),
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      iconPadding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleMedium.override(
