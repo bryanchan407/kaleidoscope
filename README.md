@@ -1,6 +1,7 @@
 # ResuMe
+Kaleidoscope is an app geared towards building a professional portfolio for high school students. It sets up an academic, extracurricular, and athletic profile for each student. Students can explore others' profiles and communicate with them, forging important connections. The LinkedIn integration allows the students the opportunity to easily shift into a more professional platform while maintaining good portfolio management skills learned from ResuMe.
+Kaleidoscope works on Android, iOS, and web platforms. It has Firebase integration. This app was built using the FlutterFlow platform which uses the Flutter framework and programming language Dart.
 
-A new Flutter project.
 
 ## Getting Started
 
